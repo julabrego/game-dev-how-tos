@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct3m873xv62p5"]
+
+[ext_resource type="PackedScene" uid="uid://c555pn5b25co5" path="res://scenes/scenario/scenario.tscn" id="1_1ei80"]
+[ext_resource type="PackedScene" uid="uid://cd6ga6lpwkq3k" path="res://scenes/player/player.tscn" id="2_qa26m"]
+
+[sub_resource type="Sky" id="Sky_1qb4s"]
+
+[sub_resource type="Environment" id="Environment_uf7w0"]
+background_mode = 1
+background_color = Color(0.564962, 0.564962, 0.564962, 1)
+sky = SubResource("Sky_1qb4s")
+sky_custom_fov = 32.1
+
+[node name="World" type="Node3D"]
+
+[node name="Scenario" parent="." instance=ExtResource("1_1ei80")]
+
+[node name="Player" parent="." instance=ExtResource("2_qa26m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.66943, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 5, 6)
+environment = SubResource("Environment_uf7w0")

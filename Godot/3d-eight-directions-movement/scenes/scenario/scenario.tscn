@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c555pn5b25co5"]
+
+[ext_resource type="Texture2D" uid="uid://du8itfhvb1vu3" path="res://assets/textures/scenario/square_pattern.png" id="1_x8umv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3vbx"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2niti"]
+albedo_texture = ExtResource("1_x8umv")
+uv1_scale = Vector3(20, 20, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tqm3h"]
+material = SubResource("StandardMaterial3D_2niti")
+size = Vector3(10, 0.5, 10)
+
+[node name="Scenario" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_r3vbx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_tqm3h")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+shadow_enabled = true
+sky_mode = 1
