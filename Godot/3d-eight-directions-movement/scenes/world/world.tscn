@@ -16,8 +16,8 @@ sky_custom_fov = 32.1
 [node name="Scenario" parent="." instance=ExtResource("1_1ei80")]
 
 [node name="Player" parent="." instance=ExtResource("2_qa26m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.66943, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.07804, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 5, 6)
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.899565, 0.436786, 0, -0.436786, 0.899565, 0, 2.99921, 6)
 environment = SubResource("Environment_uf7w0")
