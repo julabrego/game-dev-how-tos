@@ -5,7 +5,7 @@ extends CharacterBody3D
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
 
-@export var acceleration = 4
+@export var acceleration = 5
 @export var deceleration = 4
 
 var target_velocity = Vector3.ZERO
@@ -40,15 +40,15 @@ func _physics_process(delta):
 	# moving in the same direction as the input.
 	
 	# Choose if accelerates or decelerates
-	var acceleration
+	var accel
 	if direction.dot(horizontal_velocity) > 0:
-		acceleration = acceleration
+		accel = acceleration
 	else:
-		acceleration = deceleration
+		accel = deceleration
 
 	# Uses linear interpolation (lerp) to smoothly transition hvel towards target velocity.
 	# The interpolation factor is acceleration * delta, ensuring a gradual change over time.
-	horizontal_velocity = horizontal_velocity.lerp(target, acceleration * delta)
+	horizontal_velocity = horizontal_velocity.lerp(target, accel * delta)
 	
 	# Ground Velocity
 	target_velocity.x = horizontal_velocity.x
